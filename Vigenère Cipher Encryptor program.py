@@ -35,3 +35,20 @@ def encrypt_vigenere(plaintext, keyword):
         ciphertext += chr(table[row][col] + ord("A"))
 
     return ciphertext
+
+def encrypt_and_display():
+    #Input
+    plaintext = plaintext_entry.get()
+    keyword = keyword_entry.get()
+
+    # Encrypt the plaintext
+    ciphertext = encrypt_vigenere(plaintext, keyword)
+
+    # Display the result
+    ciphertext_label.config(text="Your Ciphertext is: " + ciphertext)
+    
+
+#Tkinter
+root = tk.Tk()
+root.title("Vigenere Cipher by Gusi")
+root.geometry("400x150")
